@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/Ife-150x150.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Doit - Your daily todos</title>
+</head>
+<body id="body" class="light">
+    <main> 
+        <nav id="navbar" class="">
+            <div class="logo prevent-select">
+                <h1 >DoiT</h1>
+            </div>
+            <div class="nav-popup">
+                <div class="links">
+                    <a href="#" id="all-btn" class="link">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>My tasks</span>
+                    </a>
+                    <a href="#" id="ongoing-btn" class="link">
+                        <i class="fa-solid fa-clipboard"></i>
+                        <span>Scheduled</span>
+                    </a>
+                    <a href="#" id="completed-btn" class="link">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Completed</span>
+                    </a>
+                    <a href="#" class="link theme">
+                        <i class="fa-solid fa-list"></i>
+                        <span class="name">Theme</span>
+                        <span class="cover"></span>
+                        <button class="theme-toggle">
+                            <i class="fa-solid fa-moon"></i>
+                            <i class="fa-solid fa-sun"></i>
+                        </button>
+                    </a>
+                    <a href="#" class="link logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Log out</span>
+                    </a>
+                </div>
+                <div class="devs">
+                    <h3 class="prevent-select">Developed by</h3>
+                    <div class="dev">
+                        <p class="name">
+                            <span class="prevent-select">Afolabi</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </p>
+                        <div class="dropdown">
+                            <a href="https://github.com/Afolabi-bit" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/blaakenigma" target="_blank">
+                                <i class="fa-brands fa-square-twitter"></i>
+                            </a>
+                            <a href="" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://wa.me/message/STDVJGESUNJCJ1" target="_blank">
+                                <i class="fa-brands fa-square-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="dev">
+                        <p class="name">
+                            <span class="prevent-select">Fortified</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </p>
+                        <div class="dropdown">
+                            <a href="https://github.com/iam-phenomenal/" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fa-brands fa-square-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ibrahim-ayandiran-25a061150" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="" target="_blank">
+                                <i class="fa-brands fa-square-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="copy">Copyright &copy 2022.</p>
+                </div>
+            </div>
+            <div class="mobile-btns">
+                <button class="theme-toggle theme-btn">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+        <section id="todo-info" class="todo-info">
+            <div class="container">
+                <form action="#" id="form" class="prevent-select">
+                    <div class="input">
+                        <input type="text"
+                         minlength="1" maxlength="120"
+                          name="todoInput" id="todoInput"
+                          autocomplete="off" placeholder="Meeting with John at 6pm...">
+                        <button type="submit">
+                            <i class="fa-solid fa-square-plus"></i>
+                        </button>
+                    </div>
+                    <div class="check">
+                         <div class="deadline">
+                            <label for="deadline">
+                                Deadline: mm/dd/yyyy
+                            </label>
+                            <input type="date" name="deadline" id="deadline">
+                         </div>
+                         <div class="reminder">
+                            <input type="checkbox" name="reminder" id="reminder">
+                            <label  for="reminder">
+                                Set reminder
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="metrics">
+                    <div class="card completed">
+                        <div class="outer">
+                            <div class="inner">
+                                <div id="completed-count" class="count prevent-select"></div>
+                            </div>
+                        </div>
+                        <svg class="desktop" xmlns="http://www.w3.org/2000/svg" version="1.1" width="120px" height="120px">
+                            <defs>
+                               <linearGradient id="LightGradient">
+                                  <stop offset="0%" stop-color="#673ab7" />
+                                  <stop offset="100%" stop-color="#e91e63" />
+                               </linearGradient>
+                               <linearGradient id="DarkGradient">
+                                  <stop offset="0%" stop-color="#b8f0ba" />
+                                  <stop offset="100%" stop-color="#eb7805" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="50" stroke-linecap="round" />
+                        </svg>
+                        <svg class="mobile" xmlns="http://www.w3.org/2000/svg" version="1.1" width="90px" height="90px">
+                            <defs>
+                               <linearGradient id="LightGrad">
+                                    <stop offset="0%" stop-color="#673ab7" />
+                                    <stop offset="100%" stop-color="#e91e63" />
+                               </linearGradient>
+                               <linearGradient id="DarkGrad">
+                                    <stop offset="0%" stop-color="#eb7805" />
+                                    <stop offset="100%" stop-color="#b8f0ba" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="45" cy="45" r="40" stroke-linecap="round" />
+                        </svg>
+                        <p class="prevent-select">
+                            Tasks Completed
+                        </p>
+                    </div>
+                    <div class="card ongoing">
+                        <div class="outer">
+                            <div class="inner">
+                                <div id="ongoing-count" class="count prevent-select"></div>
+                            </div>
+                        </div>
+                        <svg class="desktop" xmlns="http://www.w3.org/2000/svg" version="1.1" width="120px" height="120px">
+                            <defs>
+                               <linearGradient id="LightGradient">
+                                    <stop offset="0%" stop-color="#673ab7" />
+                                    <stop offset="100%" stop-color="#e91e63" />
+                               </linearGradient>
+                               <linearGradient id="DarkGradient">
+                                    <stop offset="0%" stop-color="#eb7805" />
+                                    <stop offset="100%" stop-color="#b8f0ba" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="50" stroke-linecap="round" />
+                        </svg>
+                        <svg class="mobile" xmlns="http://www.w3.org/2000/svg" version="1.1" width="90px" height="90px">
+                            <defs>
+                               <linearGradient id="LightGrad">
+                                    <stop offset="0%" stop-color="#673ab7" />
+                                    <stop offset="100%" stop-color="#e91e63" />
+                               </linearGradient>
+                               <linearGradient id="DarkGrad">
+                                    <stop offset="0%" stop-color="#eb7805" />
+                                    <stop offset="100%" stop-color="#b8f0ba" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="45" cy="45" r="40" stroke-linecap="round" />
+                        </svg>
+                        <p class="prevent-select">
+                            Tasks Ongoing
+                        </p>
+                    </div>                    
+                </div>
+                <div id="total" class="total prevent-select"></div>
+            </div> 
+            <div class="wrapper">
+                <div class="user" id="user">
+                    <div class="image">
+                        <img src="../assets/user.png" alt="Profile picture">
+                    </div>
+                    <div class="name">
+                        <p id="name">
+                            John Alexander Doe
+                        </p>
+                    </div>
+                    <button class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+                <div id="todo-list" class="todo-list"></div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
