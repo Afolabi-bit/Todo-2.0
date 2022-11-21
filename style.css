@@ -393,7 +393,7 @@ section.todo-info .container
 section.todo-info form 
 {
     border-radius: 10px;
-    height: 170px;
+    min-height: 170px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -413,6 +413,7 @@ section.todo-info form div.input
     display: flex;
     width: 100%;
     padding: 20px 0 0 20px;
+    flex: 5;
 }
 
 
@@ -423,10 +424,11 @@ section.todo-info form .input input
     background-color: var(--main1);
     outline: none;
     padding: 0 10px 0 10px;
-    flex: 6;
-    height: 60px;
     color: var(--blue1);
     font-size: 17px;
+    height: 50px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .light-mode section.todo-info form .input input 
@@ -447,11 +449,12 @@ section.todo-info form .input:active
 
 section.todo-info form button
 {
-    flex: 1;
+    flex: 2;
     background-color: transparent;
     outline: none;
     border: none;
     cursor: pointer;
+    padding: 0 10px;
 }
 
 section.todo-info form button i {
@@ -466,7 +469,7 @@ section.todo-info form button i {
 
 section.todo-info form .check
 {
-    padding: 30px 20px;
+    padding: 20px 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -754,19 +757,20 @@ section.todo-info form #reminder {
     display: flex;
     flex-direction: column;
     width: 255px;
+    padding: 10px 0 10px 10px;
 }
 
 .todo .date-check {
+    padding-top: 10px;
     display: flex;
-    padding: 10px 0px 10px 10px;
     align-items: baseline;
 }
 
 .date {
     margin-right: 10px;
-    font-size: 11px;
+    font-size: 9px;
     line-height: 0;
-    color: #ccc;
+    color: #aaa;
 }
 
 .date-check i {
@@ -776,19 +780,34 @@ section.todo-info form #reminder {
 
 .todo .task {
     outline: none;
-    padding: 10px 5px 10px 10px;
     letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.todo .description {
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    color: #ccc;
 }
 
 .todo .task:focus {
     outline: none;
 }
 
-.todo.completed .task {
+.todo.completed .task,
+.todo.completed .description
+ {
     text-decoration: line-through;
 }
 
-.light-mode .todo .task {
+.light-mode .todo .task,
+.light-mode .todo .description 
+{
     color: var(--blue1);
 }
 

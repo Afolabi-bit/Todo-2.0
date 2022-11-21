@@ -5,6 +5,7 @@ const toggleBtn = document.querySelectorAll('.theme-toggle');
 // Form Elements
 const form = document.getElementById('form');
 const input = document.getElementById('todoInput');
+const description = document.getElementById('description');
 const checkboxVal = document.getElementById('reminder');
 const calendarVal = document.getElementById('deadline');  
 
@@ -225,6 +226,7 @@ function createTodo(e){
     const todoDeets = document.createElement('div');
     const dateCheck = document.createElement('div');
     const task = document.createElement('p');
+    const descriptionText = document.createElement('p');
     const date = document.createElement('p');
     const clock = document.createElement('i');
     const deleteBtn = document.createElement('button');
@@ -235,7 +237,9 @@ function createTodo(e){
     div.setAttribute('draggable', 'true');
     todoDeets.classList.add('todo-deets')
     task.classList.add('task');
+    descriptionText.classList.add('description');
     task.setAttribute('contenteditable', '');
+    descriptionText.setAttribute('contenteditable', '');
     dateCheck.classList.add('date-check')
     date.classList.add('date');
     clock.className = 'fas fa-stopwatch';
@@ -246,6 +250,7 @@ function createTodo(e){
     // Add Input to the P element
     date.textContent = calendarVal.value;
     task.textContent = input.value;
+    descriptionText.textContent = description.value;
 
     // Add Icon to buttons
     checkBtn.innerHTML = '<i class="fas fa-check"></i>';
@@ -253,6 +258,8 @@ function createTodo(e){
 
     // Append innner elements to the todo 
     todoDeets.appendChild(task);
+    if (description.value.length > 0)
+        todoDeets.appendChild(descriptionText);
     todoDeets.appendChild(dateCheck);
     dateCheck.appendChild(date);
 
@@ -266,6 +273,7 @@ function createTodo(e){
     // Add the todo to the list
     todoList.appendChild(div);
     input.value = '';
+    description.value = '';
     checkboxVal.checked = false;
 
     updateMetric();
